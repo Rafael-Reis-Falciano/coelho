@@ -14,6 +14,7 @@ var ground;
 var corda, bola, coelho;
 var fundoImg, frutaImg, coelhoImg, piscarImg, comerImg, bravoImg;
 
+var botao;
 
 var novoLink;
 
@@ -69,6 +70,11 @@ function setup()
 
   novoLink = new link (corda,bola);
 
+  botao = createImg("cut_button.png");
+  botao.position(150, 150);
+  botao.size(100, 100);
+
+  botao.mouseClicked(cair);
 }
 
 function draw() 
@@ -85,3 +91,16 @@ function draw()
   drawSprites();
    
 }
+
+function cair()
+{
+  corda.break();
+  novoLink.cortar();
+  novoLink = null;
+}
+
+
+
+
+
+

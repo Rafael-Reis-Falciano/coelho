@@ -13,37 +13,12 @@ class link
                 stiffness: 0.01,
             }
         );
-        World.add(engine.world, this.link)
+        World.add(engine.world, this.link);
+    }
+
+    cortar()
+    {
+        World.remove(engine.world, this.link);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
