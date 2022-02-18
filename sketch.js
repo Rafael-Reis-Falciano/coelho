@@ -55,10 +55,9 @@ function setup()
 
   piscarImg.frameDelay = 30;
   comerImg.frameDelay = 30;
-  tristeImg.frameDelay = 5;
+  tristeImg.frameDelay = 40;
 
-
-  coelho = createSprite(250,610,100,100);
+  coelho = createSprite(250-100,610,100,100);
   coelho.addImage(coelhoImg);
   coelho.scale = 0.2;
 
@@ -110,13 +109,14 @@ function draw()
 
   if(colidir(bola,coelho) === true){
     coelho.changeAnimation("comendo");
+    somComendo.play();
   }
 
-  if(colidir(bola,ground.body) === true){
+  if(bola!=null && bola.position.y >= 660){
     coelho.changeAnimation("triste");
+    somTriste.play();
+    bola = null;
   }
-
-
 
   drawSprites();
    
