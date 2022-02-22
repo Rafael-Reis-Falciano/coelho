@@ -47,13 +47,13 @@ function setup()
 {
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if(isMobile){
-    canW = displayWidth;
-    canH = displayHeight;
+    canW = displayWidth - 50;
+    canH = displayHeight - 50;
     createCanvas(canW,canH);
   }
   else{
-    canW = displayWidth;
-    canH = displayHeight;
+    canW = displayWidth - 50;
+    canH = displayHeight -50;
     createCanvas(canW,canH);
   }
   frameRate(80);
