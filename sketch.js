@@ -16,7 +16,7 @@ var fundoImg, frutaImg, coelhoImg, piscarImg, comerImg, tristeImg;
 
 var somFundo, somTriste, somAr, somComendo, somCorte;
 
-var botao, botao2, botao3, botaoSom;
+var botao, botao2, botao3, botaoSom, botaoAr;
 
 var novoLink, novoLink2, novoLink3;
 
@@ -119,7 +119,12 @@ function setup()
   botaoSom.position(width-120, 20);
   botaoSom.size(70, 70);
   botaoSom.mouseClicked(mutar);
-  
+
+  botaoAr = createImg("balloon.png");
+  botaoAr.position(canW/2-320, 230);
+  botaoAr.size(150, 150);
+  botaoAr.mouseClicked(soprar);
+
 }
 
 function draw() 
@@ -192,7 +197,8 @@ function colidir(body,sprite){
 
 }
 
-function mutar(){
+function mutar()
+{
   if(somFundo.isPlaying()){
     somFundo.stop();
   }
@@ -201,7 +207,10 @@ function mutar(){
   }
 }
 
-
+function soprar()
+{
+  Matter.Body.applyForce(bola, {x:0, y:0}, {x:0.03, y:0})
+}
 
 
 
